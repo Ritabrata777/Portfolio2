@@ -2,7 +2,7 @@
 class Terminal {
     constructor() {
         this.GEMINI_API_KEY = 'AIzaSyDgcSl-KXLc6S1450C9sQPEO4WGRgAhYRE';
-        this.commandList = ['help', 'about', 'projects', 'skills', 'experience', 'contact', 'education', 'certifications', 'healthmonitor', 'sudo', 'clear'];
+        this.commandList = ['help', 'about', 'projects', 'skills', 'experience', 'contact', 'education', 'certifications', 'sudo', 'clear'];
 
         this.portfolioContext = `You are an AI assistant for Ritabrata Majumdar's portfolio terminal. 
 Ritabrata is a Blockchain & Web3 Enthusiast, HITK'28 BTech student in Electronics & Communication Engineering.
@@ -27,7 +27,6 @@ Keep responses concise and terminal-friendly (no markdown, use plain text).`;
 <div class="help-item"><span>contact</span> - How to reach me</div>
 <div class="help-item"><span>education</span> - My educational background</div>
 <div class="help-item"><span>certifications</span> - View my certifications</div>
-<div class="help-item"><span>healthmonitor</span> - AI Health Monitor project details</div>
 <div class="help-item"><span>clear</span> - Clear the terminal</div>`,
 
             about: `Hi! I'm Ritabrata Majumdar, a Blockchain & Web3 Enthusiast.

@@ -67,7 +67,7 @@ Currently focused on:
 <span style="color:#00ff00">6. AI-Powered Health Monitor</span>
    Portable multi-sensor disease screening system
    Tech: TensorFlow Lite, ESP32, Supabase
-   <span style="color:#ffaa00">→ Type 'healthmonitor' for full details</span>
+
 
 <span style="color:#00ff00">7. Autonomous Environmental Robot</span>
    Self-navigating robot with air quality monitoring
@@ -147,68 +147,7 @@ Heritage Institute of Technology, Kolkata (HITK'28)
 <span style="color:#00aaff">Mobile Development:</span>
 • Google Play Academy: Store Listing Certificate`,
 
-            healthmonitor: `<span style="color:#00ff00">🏥 AI-POWERED HEALTH MONITOR</span>
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<span style="color:#00aaff">📋 PROBLEM STATEMENT:</span>
-• Urgent need for affordable, non-invasive multi-sensor system
-• Low adoption of wearables - costly & inaccessible to rural users
-• Limited access & high cost of diagnostics in low-resource settings
-
-<span style="color:#00aaff">💡 OUR SOLUTION:</span>
-Portable Device + AI Web Platform for continuous health monitoring
-• Device measures vital signs + environmental factors
-• Data sent to ThingSpeak (real-time) + Supabase DB (secure)
-• AI (TensorFlow Lite) predicts heart attack probability
-• QR-based Health Identity with encrypted medical history
-• Secure doctor portal for consultations & e-prescriptions
-
-<span style="color:#00aaff">🎯 REAL-WORLD IMPACT:</span>
-• Affordable Healthcare - Accessible to rural families
-• Preventive Care - Early screening saves lives
-• Unified Medical Records - Single QR health identity
-• Scalable Ecosystem - Adaptable for future expansion
-• AI-Enhanced Accuracy - Multi-sensor data integration
-
-<span style="color:#00aaff">⚙️ TECH STACK:</span>
-
-<span style="color:#00ff00">1. HARDWARE LAYER:</span>
-   ESP32/NodeMCU - IoT Controller, WiFi
-   MAX30102 - Heart Rate, SpO₂
-   DS18B20 - Body Temperature
-   AD8232 - ECG Signal
-   TCS34725 + IR - Hemoglobin/Anemia Detection
-   MQ5 - CO₂, VOCs, NO₂ (AQI)
-   SW420 - Accident Detector
-   DHT11 - Temperature & Humidity
-
-<span style="color:#00ff00">2. DATA TRANSMISSION:</span>
-   ESP32 → WiFi → Cloud (ThingSpeak IoT)
-   Protocols: HTTP/MQTT
-   Fallback: Local storage on ESP32
-
-<span style="color:#00ff00">3. CLOUD & DATABASE:</span>
-   Firebase/Supabase - Patient records + QR-based ID
-   ThingSpeak - Real-time sensor dashboard
-   Google Maps API - Location tagging
-
-<span style="color:#00ff00">4. AI & ANALYTICS:</span>
-   TensorFlow Lite Predictive Model
-   Inputs: HR, SpO₂, Temp, ECG, AQI
-   Outputs: Cardiac Risk Score
-   Environment-aware risk analysis
-
-<span style="color:#00ff00">5. COMMUNICATION & ALERTS:</span>
-   Telegram Bot - Instant alerts
-   SMS Gateway (Fast2SMS/Twilio)
-   Email Alerts (SMTP/Firebase)
-   Hospital Notification via Maps API
-
-<span style="color:#00ff00">6. USER INTERFACE:</span>
-   Mobile/Web Dashboard - Real-time vitals
-   AQI & Environmental Risk Display
-   AI Risk Status (Safe/Moderate/Critical)
-   Doctor Portal - QR access, PDF reports`,
 
             sudo: `🔐 Permission denied!
 

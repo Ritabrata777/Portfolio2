@@ -42,56 +42,79 @@ Currently focused on:
 • AI/ML Applications
 • Video Editing & Motion Graphics`,
 
-            projects: `🚀 Featured Projects:
+            projects: `🚀 Featured Projects:<br><br>
 
-<span style="color:#00ff00">1. MediChain</span>
-   Blockchain-Powered Telemedicine Access Log with DID
-   Tech: Solidity, React, Firebase, IPFS
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">1. MediChain</span><br>
+Blockchain-Powered Telemedicine Access Log with DID<br>
+Tech: Solidity, React, Firebase, IPFS
+</div>
 
-<span style="color:#00ff00">2. Medi Translate</span>
-   AI-based Medical Report Summarizer
-   Tech: TypeScript, JavaScript, Node.js
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">2. Medi Translate</span><br>
+AI-based Medical Report Summarizer<br>
+Tech: TypeScript, JavaScript, Node.js
+</div>
 
-<span style="color:#00ff00">3. MediVault</span>
-   Decentralized Health Records with AI
-   Tech: Solidity, IPFS, React, OpenAI
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">3. MediVault</span><br>
+Decentralized Health Records with AI<br>
+Tech: Solidity, IPFS, React, OpenAI
+</div>
 
-<span style="color:#00ff00">4. Smart Irrigation System</span>
-   IoT & AI-based automated irrigation
-   Tech: Arduino, IoT, AI/ML, C++
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">4. Smart Irrigation System</span><br>
+IoT & AI-based automated irrigation<br>
+Tech: Arduino, IoT, AI/ML, C++
+</div>
 
-<span style="color:#00ff00">5. Fall Direction Detection</span>
-   ML-powered fall detection for elderly safety
-   Tech: ESP32, TinyML, Python, IoT
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">5. Fall Direction Detection</span><br>
+ML-powered fall detection for elderly safety<br>
+Tech: ESP32, TinyML, Python, IoT
+</div>
 
-<span style="color:#00ff00">6. AI-Powered Health Monitor</span>
-   Portable multi-sensor disease screening system
-   Tech: TensorFlow Lite, ESP32, Supabase
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">6. AI-Powered Health Monitor</span><br>
+Portable multi-sensor disease screening system<br>
+Tech: TensorFlow Lite, ESP32, Supabase
+</div>
 
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">7. Autonomous Environmental Robot</span><br>
+Self-navigating robot with air quality monitoring<br>
+Tech: ESP32-CAM, GPS Neo-6M, MQ-135
+</div>
 
-<span style="color:#00ff00">7. Autonomous Environmental Robot</span>
-   Self-navigating robot with air quality monitoring
-   Tech: ESP32-CAM, GPS Neo-6M, MQ-135
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">8. Fan Speed Control</span><br>
+Embedded system controlling fan speed based on ambient temperature<br>
+Tech: ATmega328P, DHT11 Sensor
+</div>
 
-<span style="color:#00ff00">8. Fan Speed Control</span>
-   Embedded system controlling fan speed based on ambient temperature
-   Tech: ATmega328P, DHT11 Sensor
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">9. CIVIC LENS</span><br>
+Digital Infrastructure Audit System with AI & Blockchain<br>
+Tech: Next.js, Python (EasyOCR), Hardhat, Polygon Amoy
+</div>
 
-<span style="color:#00ff00">9. CIVIC LENS</span>
-   Digital Infrastructure Audit System with AI & Blockchain
-   Tech: Next.js, Python (EasyOCR), Hardhat, Polygon Amoy
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">10. TollChain</span><br>
+Blockchain-based FASTag with RFID & Anon-Aadhaar Privacy<br>
+Tech: Next.js, Foundry, Scaffold-ETH 2, Anon-Aadhaar
+</div>
 
-<span style="color:#00ff00">10. TollChain</span>
-   Blockchain-based FASTag with RFID & Anon-Aadhaar Privacy
-   Tech: Next.js, Foundry, Scaffold-ETH 2, Anon-Aadhaar
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">11. TARS (AI Robot)</span><br>
+Humorous Weather & Assistant Robot powered by Gemini API<br>
+Tech: ESP8266, Google Gemini API, U8g2 OLED, Arduino
+</div>
 
-<span style="color:#00ff00">11. TARS (AI Robot)</span>
-   Humorous Weather & Assistant Robot powered by Gemini API
-   Tech: ESP8266, Google Gemini API, U8g2 OLED, Arduino
-
-<span style="color:#00ff00">12. CleanChain</span>
-   Decentralized Sanitation & Waste Management Platform
-   Tech: React, Tailwind, Hardhat, Drizzle ORM`,
+<div style="margin-bottom: 15px">
+<span style="color:#00ff00">12. CleanChain</span><br>
+Decentralized Sanitation & Waste Management Platform<br>
+Tech: React, Tailwind, Hardhat, Drizzle ORM
+</div>`,
 
             skills: `💻 Technical Skills:
 

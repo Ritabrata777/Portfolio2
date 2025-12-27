@@ -7,7 +7,7 @@ class Terminal {
         this.portfolioContext = `You are an AI assistant for Ritabrata Majumdar's portfolio terminal. 
 Ritabrata is a Blockchain & Web3 Enthusiast, HITK'28 BTech student in Electronics & Communication Engineering.
 Skills: C, C++, HTML, CSS, JavaScript, Solidity, Move, Node.js, React.js, MongoDB, IoT, Embedded Systems, Video Editing.
-Projects: MediChain, MediVault, Medi Translate, Smart Irrigation System, Fall Direction Detection, AI-Powered Health Monitor, Autonomous Environmental Robot.
+Projects: MediChain, MediVault, Medi Translate, Smart Irrigation System, Fall Direction Detection, AI-Powered Health Monitor, Autonomous Environmental Robot, Fan Speed Control.
 Certifications: Tata Group Data Visualisation, Cyfrin Updraft Blockchain & Solidity, Mastercard Cybersecurity, Google Play Academy.
 Contact: ritabratamajumdar70@gmail.com, GitHub: Ritabrata777, LinkedIn: ritabrata-majumdar-764b81332
 Location: Kolkata, West Bengal, India.
@@ -71,7 +71,11 @@ Currently focused on:
 
 <span style="color:#00ff00">7. Autonomous Environmental Robot</span>
    Self-navigating robot with air quality monitoring
-   Tech: ESP32-CAM, GPS Neo-6M, MQ-135`,
+   Tech: ESP32-CAM, GPS Neo-6M, MQ-135
+
+<span style="color:#00ff00">8. Fan Speed Control</span>
+   Embedded system controlling fan speed based on ambient temperature
+   Tech: ATmega328P, DHT11 Sensor`,
 
             skills: `💻 Technical Skills:
 

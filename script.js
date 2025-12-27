@@ -170,10 +170,7 @@ Let's collaborate on something amazing!`,
 <span style="color:#00ff00">BTech - Electronics & Communication Engineering</span>
 Heritage Institute of Technology, Kolkata (HITK'28)
 • Focus: Blockchain, IoT, Embedded Systems
-
-<span style="color:#00aaff">Achievements:</span>
-• Eggstravaganza Winner at IIT Kharagpur 2024
-• Active IEEE & GDG Member`,
+`,
 
             certifications: `🏆 Certifications:
 

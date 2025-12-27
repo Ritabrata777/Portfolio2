@@ -537,7 +537,7 @@ Try 'help' to see what you can actually do here.`,
     }
 
     async askGemini(userInput) {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${this.GEMINI_API_KEY}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.GEMINI_API_KEY}`;
 
         const prompt = `${this.portfolioContext}
 

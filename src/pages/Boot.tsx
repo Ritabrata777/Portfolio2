@@ -1,19 +1,21 @@
 interface BootProps {
   restart: boolean;
   sleep: boolean;
+  autoStart?: boolean;
+  onFinish?: () => void;
   setBooting: (value: boolean | ((prevVar: boolean) => boolean)) => void;
 }
 
 const loadingInterval = 1;
 const bootingInterval = 500;
 
-export default function Boot({ restart, sleep, setBooting }: BootProps) {
+export default function Boot({ restart, sleep, autoStart, onFinish, setBooting }: BootProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [percent, setPercent] = useState<number>(0);
 
   useEffect(() => {
-    if (restart && !sleep) setLoading(true);
-  }, [restart, sleep]);
+    if ((restart || autoStart) && !sleep) setLoading(true);
+  }, [restart, sleep, autoStart]);
 
   useInterval(
     () => {
@@ -22,6 +24,7 @@ export default function Boot({ restart, sleep, setBooting }: BootProps) {
         setTimeout(() => {
           setBooting(false);
           setLoading(false);
+          onFinish?.();
         }, bootingInterval);
       } else setPercent(newPercent);
     },

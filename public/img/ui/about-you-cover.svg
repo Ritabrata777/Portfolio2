@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <filter id="paper">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.95"
+        numOctaves="2"
+        stitchTiles="stitch"
+      />
+      <feColorMatrix
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.05 0"
+      />
+    </filter>
+    <linearGradient id="sky" x1="24" y1="12" x2="216" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f4f2ee" />
+      <stop offset="1" stop-color="#ddd9d3" />
+    </linearGradient>
+    <linearGradient id="shore" x1="120" y1="126" x2="120" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e3e0db" />
+      <stop offset="1" stop-color="#c5c1bb" />
+    </linearGradient>
+  </defs>
+
+  <rect width="240" height="240" fill="url(#sky)" />
+  <rect width="240" height="240" fill="#000" filter="url(#paper)" opacity="0.4" />
+
+  <text
+    x="120"
+    y="43"
+    fill="#171717"
+    font-family="Avenir Next, Arial, sans-serif"
+    font-size="10"
+    font-weight="700"
+    letter-spacing="8"
+    text-anchor="middle"
+  >
+    THE 1975
+  </text>
+  <text
+    x="120"
+    y="61"
+    fill="#1f1f1f"
+    font-family="Avenir Next, Arial, sans-serif"
+    font-size="7"
+    font-weight="700"
+    letter-spacing="6"
+    text-anchor="middle"
+  >
+    ABOUT YOU
+  </text>
+  <text
+    x="120"
+    y="79"
+    fill="#303030"
+    font-family="Avenir Next, Arial, sans-serif"
+    font-size="5"
+    font-weight="600"
+    letter-spacing="4.5"
+    text-anchor="middle"
+  >
+    NANDAN REMIX
+  </text>
+
+  <rect x="0" y="126" width="240" height="114" fill="url(#shore)" />
+  <path
+    d="M0 126c27 2 61 1 96-1 46-4 88-4 144 0v11H0v-10Z"
+    fill="#f8f7f4"
+    opacity="0.75"
+  />
+  <path
+    d="M0 130c47 1 94 0 142-1 33 0 65 1 98 3"
+    stroke="#8e8e8e"
+    stroke-opacity="0.45"
+    stroke-width="0.9"
+  />
+
+  <g opacity="0.48" stroke="#3a3a3a" stroke-width="0.7">
+    <path d="M17 134v10" />
+    <path d="M22 133v11" />
+    <path d="M27 132v12" />
+    <path d="M31 131v13" />
+  </g>
+
+  <g transform="translate(42 143)">
+    <path
+      d="M8 34h12l6-16c3-7 8-11 16-12l60-7c10-1 18 3 24 11l10 14h9c8 0 13 5 13 12v6c0 6-4 10-10 10h-7c-1 7-7 12-15 12-8 0-14-5-15-12H48c-1 7-7 12-15 12-8 0-14-5-15-12H8c-4 0-8-3-8-8v-3c0-4 3-7 8-7Z"
+      fill="#1a1a1a"
+    />
+    <path
+      d="M37 12c2-5 6-8 12-9l56-6c7-1 12 2 17 8l7 10H29l8-3Z"
+      fill="#222"
+    />
+    <path d="M49 15h26v15H41l8-15Z" fill="#353535" />
+    <path d="M80 14h28l11 15H80V14Z" fill="#343434" />
+    <circle cx="30" cy="54" r="11" fill="#111" />
+    <circle cx="124" cy="54" r="11" fill="#111" />
+    <g stroke="#d6d6d6" stroke-width="0.75" stroke-linecap="round" opacity="0.75">
+      <path d="M9 26 20 24" />
+      <path d="M18 20 28 29" />
+      <path d="M35 25 41 20" />
+      <path d="M46 18 60 27" />
+      <path d="M67 20 76 25" />
+      <path d="M83 17 98 26" />
+      <path d="M95 23 104 18" />
+      <path d="M112 20 126 29" />
+      <path d="M125 22 137 18" />
+      <path d="M139 26 152 21" />
+    </g>
+  </g>
+
+  <g transform="translate(120 118)" fill="#141414">
+    <ellipse cx="0" cy="5" rx="10" ry="4" opacity="0.14" />
+    <path d="M-4 -1c2-4 5-7 8-7s6 3 8 7l-4 9H0l-4-9Z" />
+    <circle cx="4" cy="-11" r="4.5" />
+    <path d="M-10 -1-27 -10l-2 4 16 10L-10 -1Z" />
+    <path d="M15 -2 31 -9l2 4-15 9-3-1Z" />
+    <path d="M0 7-6 28h5l6-18 6 18h5L8 7H0Z" />
+  </g>
+
+  <g fill="#171717" opacity="0.18">
+    <ellipse cx="29" cy="186" rx="10" ry="3" />
+    <ellipse cx="51" cy="205" rx="7" ry="2" />
+    <ellipse cx="190" cy="192" rx="8" ry="2.5" />
+    <ellipse cx="171" cy="170" rx="6" ry="2" />
+    <ellipse cx="144" cy="220" rx="10" ry="2.4" />
+  </g>
+</svg>

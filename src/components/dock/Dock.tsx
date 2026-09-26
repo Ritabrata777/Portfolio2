@@ -48,7 +48,9 @@ export default function Dock({
           height: `${(dockSize + 15) / 16}rem`
         }}
       >
-        {apps.map((app) => (
+        {apps
+          .filter((app) => app.showInDock !== false)
+          .map((app) => (
           <DockItem
             key={`dock-${app.id}`}
             id={app.id}

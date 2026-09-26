@@ -48,6 +48,34 @@
   @apply block;
 }
 
+.vscode-scrollbar {
+  scrollbar-color: #6f6f6f #1e1e1e;
+  scrollbar-width: thin;
+}
+
+.vscode-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.vscode-scrollbar::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.vscode-scrollbar::-webkit-scrollbar-thumb {
+  background: #5d5d5d;
+  border: 2px solid #1e1e1e;
+  border-radius: 999px;
+}
+
+.vscode-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7a;
+}
+
+.vscode-scrollbar::-webkit-scrollbar-corner {
+  background: #1e1e1e;
+}
+
 /* --------- dock --------- */
 
 .dock ul {

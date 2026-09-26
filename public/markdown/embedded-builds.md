@@ -19,3 +19,15 @@ Self-navigating environmental monitoring build using sensing, mobility, and loca
 ## Fan Speed Control
 
 Embedded control system that dynamically adjusts speed based on ambient temperature.
+
+## Secure Sensor Pipeline
+
+Quantum-resilient IoT telemetry: ESP32 TRNG to OTP mod-257 encrypt to FastAPI + HMAC-SHA256 verify with live dashboard.
+
+## TARS
+
+Playful embedded AI assistant robot built around sensors, display output, and conversational interactions.
+
+## Indigenous ITMS Prototype
+
+Contactless rail track monitoring MVP with 222 Hz edge pipeline, EKF denoising, defect segmenter and REST telemetry, plus low-cost Raspberry Pi variant for lab and trolley demos.

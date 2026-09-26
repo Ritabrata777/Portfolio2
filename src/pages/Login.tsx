@@ -38,7 +38,11 @@ export default function Login(props: MacActions) {
     >
       <div className="inline-block w-auto relative top-1/2 -mt-40">
         {/* Avatar */}
-        <img className="rounded-full size-24 my-0 mx-auto" src={user.avatar} alt="img" />
+        <img
+          className="rounded-full size-24 my-0 mx-auto object-cover object-center shadow-lg shadow-black/25"
+          src={user.avatar}
+          alt={`${user.name} profile`}
+        />
         <div className="font-semibold mt-2 text-xl text-white">{user.name}</div>
 
         {/* Password Input */}

@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
-import { music } from "~/configs";
+import type { MusicTrackData } from "~/types";
 
 interface SliderProps {
   icon: string;
@@ -25,12 +25,62 @@ const SliderComponent = ({ icon, value, setValue }: SliderProps) => (
   </div>
 );
 
+const TrackButtonIcon = ({
+  children,
+  className = "size-4"
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    {children}
+  </svg>
+);
+
+const PreviousIcon = () => (
+  <TrackButtonIcon>
+    <path
+      d="M11 3.5 5.5 8l5.5 4.5V3.5Zm-6 0h1v9H5v-9Z"
+      fill="currentColor"
+    />
+  </TrackButtonIcon>
+);
+
+const NextIcon = () => (
+  <TrackButtonIcon>
+    <path
+      d="M5 12.5 10.5 8 5 3.5v9Zm6 0h-1v-9h1v9Z"
+      fill="currentColor"
+    />
+  </TrackButtonIcon>
+);
+
+const PlayIcon = () => (
+  <TrackButtonIcon className="size-4.5">
+    <path d="M5 3.5 12 8l-7 4.5v-9Z" fill="currentColor" />
+  </TrackButtonIcon>
+);
+
+const PauseIcon = () => (
+  <TrackButtonIcon className="size-4.5">
+    <path d="M4.5 3.5h2.5v9H4.5v-9Zm4.5 0h2.5v9H9v-9Z" fill="currentColor" />
+  </TrackButtonIcon>
+);
+
 interface CCMProps {
   toggleControlCenter: () => void;
-  toggleAudio: (target: boolean) => void;
+  toggleAudio: (target?: boolean) => void;
   setBrightness: (value: number) => void;
   setKeyboardBrightness: (value: number) => void;
   setVolume: (value: number) => void;
+  track: MusicTrackData;
+  changeTrack: (direction: "prev" | "next") => void;
   playing: boolean;
   btnRef: React.RefObject<HTMLDivElement>;
 }
@@ -41,6 +91,8 @@ export default function ControlCenterMenu({
   setBrightness,
   setKeyboardBrightness,
   setVolume,
+  track,
+  changeTrack,
   playing,
   btnRef
 }: CCMProps) {
@@ -171,16 +223,37 @@ export default function ControlCenterMenu({
         <SliderComponent icon="i-ion:volume-high" value={volume} setValue={setVolume} />
       </div>
       <div className="cc-grid col-span-4 hstack space-x-2.5" p="y-2 l-2 r-4">
-        <img className="w-12 rounded-lg" src={music.cover} alt="cover art" />
+        <img className="w-12 rounded-lg" src={track.cover} alt={`${track.title} cover art`} />
         <div flex-1>
-          <div className="font-medium">{music.title}</div>
-          <div className="cc-text">{music.artist}</div>
+          <div className="font-medium">{track.title}</div>
+          <div className="cc-text">{track.artist}</div>
         </div>
-        {playing ? (
-          <span className="i-bi:pause-fill text-2xl" onClick={() => toggleAudio(false)} />
-        ) : (
-          <span className="i-bi:play-fill text-2xl" onClick={() => toggleAudio(true)} />
-        )}
+        <div className="hstack space-x-1.5">
+          <button
+            type="button"
+            className="size-8 flex-center rounded-full text-lg text-c-black/70 transition hover:bg-c-black/8 hover:text-c-black"
+            onClick={() => changeTrack("prev")}
+            aria-label="Previous song"
+          >
+            <PreviousIcon />
+          </button>
+          <button
+            type="button"
+            className="size-9 flex-center rounded-full text-2xl text-c-black transition hover:bg-c-black/8"
+            onClick={() => toggleAudio(!playing)}
+            aria-label={playing ? "Pause song" : "Play song"}
+          >
+            {playing ? <PauseIcon /> : <PlayIcon />}
+          </button>
+          <button
+            type="button"
+            className="size-8 flex-center rounded-full text-lg text-c-black/70 transition hover:bg-c-black/8 hover:text-c-black"
+            onClick={() => changeTrack("next")}
+            aria-label="Next song"
+          >
+            <NextIcon />
+          </button>
+        </div>
       </div>
     </div>
   );

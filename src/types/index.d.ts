@@ -13,6 +13,7 @@ export {
   BearData,
   LaunchpadData,
   MusicData,
+  MusicTrackData,
   TerminalData,
   UserData,
   WallpaperData,

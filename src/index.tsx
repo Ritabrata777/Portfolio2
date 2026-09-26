@@ -12,12 +12,14 @@ import "~/styles/index.css";
 
 export default function App() {
   const [login, setLogin] = useState<boolean>(false);
-  const [booting, setBooting] = useState<boolean>(false);
+  const [booting, setBooting] = useState<boolean>(true);
+  const [initialBoot, setInitialBoot] = useState<boolean>(true);
   const [restart, setRestart] = useState<boolean>(false);
   const [sleep, setSleep] = useState<boolean>(false);
 
   const shutMac = (e: React.MouseEvent): void => {
     e.stopPropagation();
+    setInitialBoot(false);
     setRestart(false);
     setSleep(false);
     setLogin(false);
@@ -26,6 +28,7 @@ export default function App() {
 
   const restartMac = (e: React.MouseEvent): void => {
     e.stopPropagation();
+    setInitialBoot(false);
     setRestart(true);
     setSleep(false);
     setLogin(false);
@@ -34,6 +37,7 @@ export default function App() {
 
   const sleepMac = (e: React.MouseEvent): void => {
     e.stopPropagation();
+    setInitialBoot(false);
     setRestart(false);
     setSleep(true);
     setLogin(false);
@@ -41,7 +45,15 @@ export default function App() {
   };
 
   if (booting) {
-    return <Boot restart={restart} sleep={sleep} setBooting={setBooting} />;
+    return (
+      <Boot
+        restart={restart}
+        sleep={sleep}
+        autoStart={initialBoot}
+        onFinish={() => setInitialBoot(false)}
+        setBooting={setBooting}
+      />
+    );
   } else if (login) {
     return (
       <Desktop

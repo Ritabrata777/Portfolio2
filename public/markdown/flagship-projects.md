@@ -1,21 +1,15 @@
 # Flagship Projects
 
+Best 3 builds.
+
 ## MediChain
 
 Blockchain-powered telemedicine access log focused on auditability and identity-aware access control.
 
-## Civic Lens
+## Mimo Studio
 
-Digital infrastructure audit workflow combining OCR, AI-assisted processing, and blockchain-backed records.
+AI-assisted schematic studio monorepo in Rust/egui with prompt-to-plan, typed schematic/BOM proposal and KiCad exports.
 
-## TollChain
+## Indigenous ITMS Prototype
 
-Privacy-aware blockchain tolling concept exploring RFID flows and identity verification.
-
-## MediVault
-
-Decentralized health records concept blending secure storage with AI-assisted handling.
-
-## TARS
-
-Playful embedded AI assistant robot built around sensors, display output, and conversational interactions.
+Contactless rail track monitoring MVP with 222 Hz edge pipeline, EKF denoising, defect segmenter and REST telemetry, plus low-cost Raspberry Pi variant for lab and trolley demos.

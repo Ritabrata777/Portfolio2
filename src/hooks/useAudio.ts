@@ -9,19 +9,30 @@ export interface HTMLAudioProps {
 }
 
 export function useAudio(props: HTMLAudioProps) {
-  const element = new Audio(props.src);
+  const [element] = useState(() => {
+    const audio = new Audio(props.src);
+    audio.preload = "auto";
+    return audio;
+  });
   const ref = useRef<HTMLAudioElement>(element);
 
   const [state, setState] = useState<HTMLAudioState>({
-    volume: 1,
-    playing: false
+    volume: element.volume,
+    playing: !element.paused
   });
+
+  const setAudioState = (value: Partial<HTMLAudioState>) => {
+    setState((prev) => ({
+      ...prev,
+      ...value
+    }));
+  };
 
   const controls = {
     play: (): Promise<void> | void => {
       const el = ref.current;
       if (el) {
-        setState({ ...state, playing: true });
+        setAudioState({ playing: true });
         return el.play();
       }
     },
@@ -29,17 +40,17 @@ export function useAudio(props: HTMLAudioProps) {
     pause: (): Promise<void> | void => {
       const el = ref.current;
       if (el) {
-        setState({ ...state, playing: false });
+        setAudioState({ playing: false });
         return el.pause();
       }
     },
 
-    toggle: (): Promise<void> | void => {
+    toggle: (target?: boolean): Promise<void> | void => {
       const el = ref.current;
       if (el) {
-        const promise = state.playing ? el.pause() : el.play();
-        setState({ ...state, playing: !state.playing });
-        return promise;
+        const shouldPlay = typeof target === "boolean" ? target : el.paused;
+        setAudioState({ playing: shouldPlay });
+        return shouldPlay ? el.play() : el.pause();
       }
     },
 
@@ -48,19 +59,41 @@ export function useAudio(props: HTMLAudioProps) {
       if (el) {
         value = Math.min(1, Math.max(0, value));
         el.volume = value;
-        setState({ ...state, volume: value });
+        setAudioState({ volume: value });
       }
     }
   };
 
   useEffect(() => {
-    const handler = () => {
-      if (props.autoReplay) controls.play();
+    const el = ref.current;
+    if (!el) return;
+
+    const syncVolume = () => {
+      setAudioState({ volume: el.volume });
+    };
+    const syncPlaying = () => {
+      setAudioState({ playing: !el.paused });
+    };
+    const handleEnded = () => {
+      if (props.autoReplay) {
+        void el.play();
+        setAudioState({ playing: true });
+        return;
+      }
+
+      setAudioState({ playing: false });
     };
 
-    element.addEventListener("ended", handler);
+    el.addEventListener("volumechange", syncVolume);
+    el.addEventListener("play", syncPlaying);
+    el.addEventListener("pause", syncPlaying);
+    el.addEventListener("ended", handleEnded);
+
     return () => {
-      element.removeEventListener("ended", handler);
+      el.removeEventListener("volumechange", syncVolume);
+      el.removeEventListener("play", syncPlaying);
+      el.removeEventListener("pause", syncPlaying);
+      el.removeEventListener("ended", handleEnded);
     };
   }, [props.autoReplay]);
 
@@ -69,7 +102,28 @@ export function useAudio(props: HTMLAudioProps) {
 
     if (!el) return;
 
-    setState({
+    const resolvedSrc = new URL(props.src, window.location.href).href;
+    if (el.src !== resolvedSrc) {
+      const shouldResume = !el.paused;
+
+      el.pause();
+      el.preload = "auto";
+      el.src = props.src;
+      el.load();
+      setAudioState({
+        volume: el.volume,
+        playing: false
+      });
+
+      if (shouldResume) {
+        void el.play().catch(() => {
+          setAudioState({ playing: false });
+        });
+      }
+      return;
+    }
+
+    setAudioState({
       volume: el.volume,
       playing: !el.paused
     });

@@ -1,5 +1,6 @@
 import { appBarHeight } from "~/utils";
 import type { AppsData } from "~/types";
+import Certificates from "~/components/apps/Certificates";
 
 const apps: AppsData[] = [
   {
@@ -14,7 +15,6 @@ const apps: AppsData[] = [
     desktop: true,
     width: 860,
     height: 500,
-    show: true,
     y: -40,
     img: "img/icons/bear.png",
     content: <Bear />
@@ -73,6 +73,18 @@ const apps: AppsData[] = [
     desktop: true,
     img: "img/icons/terminal.png",
     content: <Terminal />
+  },
+  {
+    id: "certificates",
+    title: "Certificates",
+    desktop: true,
+    showInDock: false,
+    width: 920,
+    height: 620,
+    x: 60,
+    y: -10,
+    img: "img/icons/certificates-folder.svg",
+    content: <Certificates />
   },
   {
     id: "github",

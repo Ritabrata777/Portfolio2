@@ -118,7 +118,7 @@ const terminal: TerminalData[] = [
         title: "civic-lens.txt",
         type: "file",
         content: makeBlock(
-          "Civic Lens\nNext.js / Python / Hardhat / Polygon Amoy\nDigital infrastructure audit workflow combining OCR, AI-assisted processing, and blockchain-backed records."
+          "Civic Lens\nNext.js 15 / Genkit AI / Hardhat / YOLOv8 / Firebase\nTransparent grievance redressal with AI triage, duplicate detection, YOLO violation detection and immutable action log."
         )
       },
       {
@@ -134,7 +134,7 @@ const terminal: TerminalData[] = [
         title: "ai-health-monitor.txt",
         type: "file",
         content: makeBlock(
-          "AI-Powered Health Monitor\nTensorFlow Lite / ESP32 / Supabase\nPortable multi-sensor disease screening concept built on embedded hardware and lightweight AI models."
+          "AI-Powered Health Monitor (AURA)\nNext.js 15 / FastAPI / ESP32-S3 / Gemini / MongoDB\nAssistive smart-glasses health platform from aur/ with live dashboards, SOS and GPS. Pin diagram in pins.txt."
         )
       },
       {
@@ -184,6 +184,94 @@ const terminal: TerminalData[] = [
         content: makeBlock(
           "CleanChain\nReact / Tailwind / Hardhat / Drizzle ORM\nDecentralized sanitation and waste management platform concept focused on transparency and coordination."
         )
+      },
+      {
+        id: "project-freducation",
+        title: "freducation.txt",
+        type: "file",
+        content: makeBlock(
+          "Freducation\nTanStack Start / Supabase / Gemini API / Tailwind\nCommunity academic library with PDF/link/MCQ uploads, auto-metadata, moderation queue and personalized feed."
+        )
+      },
+      {
+        id: "project-itms",
+        title: "indigenous-itms.txt",
+        type: "file",
+        content: makeBlock(
+          "Indigenous ITMS\nPython / FastAPI / EKF / Raspberry Pi\nContactless rail track monitoring MVP with 222 Hz edge pipeline, EKF denoising, defect segmenter and REST telemetry plus low-cost Pi variant."
+        )
+      },
+      {
+        id: "project-spectra-guard",
+        title: "spectra-guard.txt",
+        type: "file",
+        content: makeBlock(
+          "Spectra Guard\nNext.js 14 / FastAPI / OpenCV / EKF + PID\nFSOC coarse-alignment PAT console with physics engine and turbulence correction streaming JPEG+JSON over WebSocket."
+        )
+      },
+      {
+        id: "project-polaris-ice",
+        title: "polaris-ice.txt",
+        type: "file",
+        content: makeBlock(
+          "POLARIS-ICE\nPython / NumPy / Rasterio / SciPy\nPhysics-based lunar south-pole ice detection converting DFSAR CPR + DEM into ice masks, landing ranking and A* rover traverse."
+        )
+      },
+      {
+        id: "project-nafnet-sr",
+        title: "nafnet-sr.txt",
+        type: "file",
+        content: makeBlock(
+          "NAFNet-SR\nPyTorch / NAFNet / OpenCV / Gradio\nSemiconductor SEM denoising, deblurring and 4x super-resolution with synthetic degradation, 34.3 dB PSNR."
+        )
+      },
+      {
+        id: "project-secure-sensor",
+        title: "secure-sensor.txt",
+        type: "file",
+        content: makeBlock(
+          "Secure Sensor Pipeline\nESP32 / FastAPI / HMAC-SHA256 / WebSocket\nQuantum-resilient IoT telemetry with ESP32 TRNG, OTP mod-257 encryption, HMAC verification and live dashboard."
+        )
+      },
+      {
+        id: "project-oasis",
+        title: "oasis-rf.txt",
+        type: "file",
+        content: makeBlock(
+          "O.A.S.I.S\nPython / PyTorch / Dueling Double DQN / LSTM\nRF spectrum-scheduling simulator with POMDP environment and recurrent RL agent for frequency-agile emitter intercept."
+        )
+      },
+      {
+        id: "project-gemini-animator",
+        title: "gemini-animator.txt",
+        type: "file",
+        content: makeBlock(
+          "Gemini Animator\nExtendScript / CEP / Gemini 2.5 Flash / Node.js\nPrompt-to-animation After Effects tool with ScriptUI panel and CEP extension packaging self-signed ZXP."
+        )
+      },
+      {
+        id: "project-cutpilot",
+        title: "cutpilot-ai.txt",
+        type: "file",
+        content: makeBlock(
+          "CutPilot AI\nAdobe CEP / ExtendScript / Gemini Files API\nUnsigned Premiere Pro panel that uploads clips to Gemini and auto-assembles silence/viral/repeat cuts."
+        )
+      },
+      {
+        id: "project-mimo",
+        title: "mimo-studio.txt",
+        type: "file",
+        content: makeBlock(
+          "Mimo Studio\nRust / egui / Axum / Postgres / KiCad\nAI-assisted schematic studio monorepo: prompt to engineering plan with typed schematic/BOM proposal and KiCad exports."
+        )
+      },
+      {
+        id: "project-signal-analyzer",
+        title: "signal-analyzer.txt",
+        type: "file",
+        content: makeBlock(
+          "Signal Analyzer\nPython / PyQt6 / SciPy / scikit-learn\nHF/VHF/UHF IQ/WAV intelligence tool with modulation classification, demod, FEC decode and explainable AI brief."
+        )
       }
     ]
   },
@@ -229,6 +317,22 @@ const terminal: TerminalData[] = [
     title: "experience",
     type: "folder",
     children: [
+      {
+        id: "experience-filosuite",
+        title: "filosuite-intern.txt",
+        type: "file",
+        content: makeBlock(
+          "Associate Backend Engineer Intern, Filosuite\nFilosuite - Internship - Jul 2026 to Present - India Remote\nBuilding backend solutions and strengthening backend development skills."
+        )
+      },
+      {
+        id: "experience-fof",
+        title: "friends-of-figma.txt",
+        type: "file",
+        content: makeBlock(
+          "Outreach Member, Friends of Figma Kolkata\nJan 2026 to Present\nCommunity outreach, offline events, and member engagement in the local design ecosystem."
+        )
+      },
       {
         id: "experience-ambassador",
         title: "nssc-25.txt",
@@ -276,30 +380,58 @@ const terminal: TerminalData[] = [
     type: "folder",
     children: [
       {
-        id: "cert-data",
-        title: "data-business.txt",
+        id: "cert-solidity",
+        title: "solidity-dev.txt",
         type: "file",
         content: makeBlock(
-          "Tata Group - Data Visualisation: Empowering Business with Effective Insights Job Simulation"
+          "Solidity Smart Contract Development\nCyfrin Updraft - Issued Jul 2025 - ID JOM634NUM441\nhttps://profiles.cyfrin.io/u/ritabrata070/achievements/solidity"
         )
       },
       {
-        id: "cert-blockchain",
-        title: "blockchain.txt",
+        id: "cert-blockchain-basics",
+        title: "blockchain-basics.txt",
         type: "file",
-        content: makeBlock("Cyfrin Updraft: Blockchain Basics and Solidity Smart Contract Development")
+        content: makeBlock(
+          "Blockchain Basics\nCyfrin - Issued Jun 2025 Expired Jun 2026 - ID BBCC-C6M4MMKVMHSTG"
+        )
       },
       {
         id: "cert-cyber",
         title: "cybersecurity.txt",
         type: "file",
-        content: makeBlock("Mastercard Cybersecurity Job Simulation")
+        content: makeBlock(
+          "Mastercard Cybersecurity Job Simulation\nForage - Issued Dec 2024 - ID kqDJjbJpSWn8XCqzw"
+        )
+      },
+      {
+        id: "cert-data",
+        title: "data-business.txt",
+        type: "file",
+        content: makeBlock(
+          "Tata Data Visualisation\nForage - Issued Dec 2024 - ID 4AM7DoLQjDW4xZnQZ"
+        )
+      },
+      {
+        id: "cert-genai",
+        title: "generative-ai.txt",
+        type: "file",
+        content: makeBlock("What Is Generative AI?\nLinkedIn - Issued Oct 2024")
+      },
+      {
+        id: "cert-dl",
+        title: "deep-learning.txt",
+        type: "file",
+        content: makeBlock(
+          "Introduction to Deep Learning\nInfosys Springboard - Issued Oct 2024"
+        )
       },
       {
         id: "cert-mobile",
         title: "mobile-development.txt",
         type: "file",
-        content: makeBlock("Google Play Academy Store Listing Certificate")
+        content: makeBlock(
+          "Google Play Store Listing Certificate\nGoogle - Issued Oct 2024 Expires Oct 2027 - ID 118617067"
+        )
       }
     ]
   }

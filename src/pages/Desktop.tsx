@@ -23,6 +23,44 @@ interface DesktopState {
   spotlight: boolean;
 }
 
+const desktopShortcuts = [
+  {
+    id: "certificates",
+    title: "Certificates",
+    img: "img/icons/certificates-folder.svg"
+  }
+];
+
+const DesktopShortcut = ({
+  id,
+  title,
+  img,
+  openApp
+}: {
+  id: string;
+  title: string;
+  img: string;
+  openApp: (id: string) => void;
+}) => {
+  return (
+    <button
+      type="button"
+      className="absolute right-5 top-12 z-20 flex w-22 flex-col items-center rounded-2xl px-2 py-2 text-white/95 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 cursor-pointer"
+      onClick={(e) => {
+        e.stopPropagation();
+        openApp(id);
+      }}
+      onDoubleClick={() => openApp(id)}
+      aria-label={`Open ${title}`}
+    >
+      <img src={img} alt="" className="w-16 object-contain drop-shadow-[0_10px_16px_rgba(0,0,0,0.28)]" />
+      <span className="mt-1.5 text-center text-xs font-medium leading-4 [text-shadow:0_2px_8px_rgba(0,0,0,0.65)]">
+        {title}
+      </span>
+    </button>
+  );
+};
+
 export default function Desktop(props: MacActions) {
   const [state, setState] = useState({
     showApps: {},
@@ -134,7 +172,12 @@ export default function Desktop(props: MacActions) {
     setWindowPosition(id);
 
     // get the corrosponding dock icon's position
-    let r = document.querySelector(`#dock-${id}`) as HTMLElement;
+    let r = document.querySelector(`#dock-${id}`) as HTMLElement | null;
+    if (!r) {
+      setAppMin(id, true);
+      return;
+    }
+
     const dockAppRect = r.getBoundingClientRect();
 
     r = document.querySelector(`#window-${id}`) as HTMLElement;
@@ -260,6 +303,16 @@ export default function Desktop(props: MacActions) {
       <div className="window-bound z-10 absolute" style={{ top: minMarginY }}>
         {renderAppWindows()}
       </div>
+
+      {desktopShortcuts.map((shortcut) => (
+        <DesktopShortcut
+          key={`desktop-shortcut-${shortcut.id}`}
+          id={shortcut.id}
+          title={shortcut.title}
+          img={shortcut.img}
+          openApp={openApp}
+        />
+      ))}
 
       {/* Spotlight */}
       {state.spotlight && (

@@ -75,10 +75,14 @@ const TopBar = (props: TopBarProps) => {
     showWifiMenu: false,
     showAppleMenu: false
   });
+  const [trackIndex, setTrackIndex] = useState(music.initialTrackIndex ?? 0);
+  const tracks = music.tracks;
+  const currentTrack = tracks[trackIndex] ?? tracks[0];
+  const preloadedTracksRef = useRef<HTMLAudioElement[]>([]);
 
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [audio, audioState, controls, audioRef] = useAudio({
-    src: music.audio,
+    src: currentTrack.audio,
     autoReplay: true
   });
   const { winWidth, winHeight } = useWindowSize();
@@ -107,6 +111,23 @@ const TopBar = (props: TopBarProps) => {
   }, []);
 
   useEffect(() => {
+    preloadedTracksRef.current = tracks.map((track) => {
+      const preloadedAudio = new Audio(track.audio);
+      preloadedAudio.preload = "auto";
+      preloadedAudio.load();
+      return preloadedAudio;
+    });
+
+    return () => {
+      preloadedTracksRef.current.forEach((preloadedAudio) => {
+        preloadedAudio.pause();
+        preloadedAudio.src = "";
+      });
+      preloadedTracksRef.current = [];
+    };
+  }, [tracks]);
+
+  useEffect(() => {
     const isFull = isFullScreen();
     toggleFullScreen(isFull);
   }, [winWidth, winHeight]);
@@ -124,25 +145,34 @@ const TopBar = (props: TopBarProps) => {
     setKeyboardBrightness(value);
   };
 
-  const toggleControlCenter = (): void => {
-    setState({
-      ...state,
-      showControlCenter: !state.showControlCenter
+  const changeTrack = (direction: "prev" | "next"): void => {
+    setTrackIndex((prev) => {
+      if (tracks.length === 0) return prev;
+
+      const delta = direction === "next" ? 1 : -1;
+      return (prev + delta + tracks.length) % tracks.length;
     });
+  };
+
+  const toggleControlCenter = (): void => {
+    setState((prev) => ({
+      ...prev,
+      showControlCenter: !prev.showControlCenter
+    }));
   };
 
   const toggleAppleMenu = (): void => {
-    setState({
-      ...state,
-      showAppleMenu: !state.showAppleMenu
-    });
+    setState((prev) => ({
+      ...prev,
+      showAppleMenu: !prev.showAppleMenu
+    }));
   };
 
   const toggleWifiMenu = (): void => {
-    setState({
-      ...state,
-      showWifiMenu: !state.showWifiMenu
-    });
+    setState((prev) => ({
+      ...prev,
+      showWifiMenu: !prev.showWifiMenu
+    }));
   };
 
   const logout = (): void => {
@@ -237,6 +267,8 @@ const TopBar = (props: TopBarProps) => {
         {/* Open this when clicking on Control Center button */}
         {state.showControlCenter && (
           <ControlCenterMenu
+            track={currentTrack}
+            changeTrack={changeTrack}
             playing={audioState.playing}
             toggleAudio={controls.toggle}
             setVolume={setAudioVolume}

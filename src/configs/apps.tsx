@@ -1,6 +1,7 @@
 import { appBarHeight } from "~/utils";
 import type { AppsData } from "~/types";
 import Certificates from "~/components/apps/Certificates";
+import GitHub from "~/components/apps/GitHub";
 
 const apps: AppsData[] = [
   {
@@ -89,9 +90,13 @@ const apps: AppsData[] = [
   {
     id: "github",
     title: "GitHub",
-    desktop: false,
+    desktop: true,
+    width: 860,
+    height: 560,
+    x: 40,
+    y: -20,
     img: "img/icons/github.png",
-    link: "https://github.com/Ritabrata777"
+    content: <GitHub />
   }
 ];
 
